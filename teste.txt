@@ -2,7 +2,7 @@ NUM x = 5
 NUM y = 10
 NUM foo =  x+y
 SE foo > 0 ENTAO
-    IMPRIME x
+
     IMPRIME y
 FIMSE
 STR greeting = "Hello, world!"

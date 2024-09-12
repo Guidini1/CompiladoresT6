@@ -1,21 +1,25 @@
-programa = {declaracao}
-declaracao = "IMPRIME" (expressao | string) nl
-            | "SE" comparacao "ENTAO" nl {declaracao} "FIMSE" nl
-            | "ENQUANTO" comparacao "REPETE" nl {declaracao} "FIMENQUANTO" nl
-            | "NUM" ident "=" expressao nl
-            | "STR" ident "=" string nl
-            | "CONST" ident  expressao nl
-            | "CONSTNUM" ident  expressao nl
-            | "CONSTSTR" ident  string nl
-            | "ENTRADA" ident nl
-comparacao = expressao (("==" | "!=" | ">" | ">=" | "<" | "<=") expressao)+
-expressao = termo {( "-" | "+" ) termo}
-termo = unario {( "/" | "*" ) unario}
-unario = ["+" | "-"] primario
-primario = numero | ident
-nl = '\n'+
-numero=[1..9]+ (.[1..9]*)?
-cadeia=["a..y"]*["A..Y"]*
-string="cadeia"
-ident=["a..y"]*
+<programa> ::= { <declaração> }
 
+<declaração> ::= <atribuição> | <imprime> | <entrada> | <condicional> | <loop>
+
+<atribuição> ::= <identificador> "=" <expressão>
+
+<imprime> ::= "IMPRIME" <expressão>
+
+<entrada> ::= "ENTRADA" <identificador>
+
+<condicional> ::= "SE" <expressão> "ENTAO" <declaração> { "FIMSE" }
+
+<loop> ::= "ENQUANTO" <expressão> "REPETE" <declaração> { "FIMENQUANTO" }
+
+<expressão> ::= <termo> { ("+" | "-" | ">" | "<" | ">=" | "<=" | "==" | "!=") <termo> }
+
+<termo> ::= <fator> { ("*" | "/") <fator> }
+
+<fator> ::= <número> | <identificador> | <string> | "(" <expressão> ")"
+
+<identificador> ::= [a-zA-Z][a-zA-Z0-9]*
+
+<número> ::= [0-9]+ | [0-9]+\.[0-9]+
+
+<string> ::= "[^"\r\n\t\\%]*"

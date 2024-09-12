@@ -1,0 +1,21 @@
+programa = {declaracao}
+declaracao = "IMPRIME" (expressao | string) nl
+            | "SE" comparacao "ENTAO" nl {declaracao} "FIMSE" nl
+            | "ENQUANTO" comparacao "REPETE" nl {declaracao} "FIMENQUANTO" nl
+            | "NUM" ident "=" expressao nl
+            | "STR" ident "=" string nl
+            | "CONST" ident  expressao nl
+            | "CONSTNUM" ident  expressao nl
+            | "CONSTSTR" ident  string nl
+            | "ENTRADA" ident nl
+comparacao = expressao (("==" | "!=" | ">" | ">=" | "<" | "<=") expressao)+
+expressao = termo {( "-" | "+" ) termo}
+termo = unario {( "/" | "*" ) unario}
+unario = ["+" | "-"] primario
+primario = numero | ident
+nl = '\n'+
+numero=[1..9]+ (.[1..9]*)?
+cadeia=["a..y"]*["A..Y"]*
+string="cadeia"
+ident=["a..y"]*
+

@@ -1,0 +1,7 @@
+NUM x = 5
+NUM y = 10
+NUM foo  x+y
+greeting = "Hello, world!"
+STR farewell = "Goodbye!"
+IMPRIME foo
+IMPRIME farewell

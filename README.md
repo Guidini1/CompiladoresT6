@@ -2,6 +2,8 @@
 
 O trabalho 6 (T6) da disciplina consiste em implementar um compilador completo para uma linguagem de sua escolha. Não é necessário implementar uma linguagem de programação completa (como LA, ou Alguma). Na verdade, isso não é recomendável, dado que irá tomar muito tempo. A ideia é criar uma linguagem pequena, de preferência declarativa, para alguma aplicação específica de interesse dos estudantes. O único requisito é que o compilador tenha:
 
+Link para o vídeo de apresentação: https://drive.google.com/file/d/1bFw7dm3LX5FGCzzLODRLjxFZGibfO6zl/view?usp=sharing
+
 ## Alunos
 - Bruno Zenatti de Caires Marcelo RA: 769821
 - Giovani Guidini RA: 790862
